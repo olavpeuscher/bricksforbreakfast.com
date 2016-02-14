@@ -1,26 +1,44 @@
-$(document).ready(function() {
-
-	$('#menu-button').hover(function () {
-
-        $('#contact-dropdown').each(function( index ) {
-            $( this ).stop().animate({
-                width: "200px",
-                height: "200px",
-                padding: "20px"
-              }, 150 * (index + 1), function() {
-                // Animation complete.
-            });
-        });
-    }, function () {
-        $('#contact-dropdown').each(function( index ) {
-            $( this ).stop().animate({
-                width: "0px",
-                height: "0px",
-                padding: "0"
-              }, 150, function() {
-                // Animation complete.
-            });
-        });
-    });
+/**
+ * Add class to nav when page scrolls
+ */
+$(window).scroll(function () {
+    if ($(this).scrollTop() < 30) {
+        $('nav').removeClass('scroll');
+    } else {
+        $('nav').addClass('scroll');
+    }
 });
 
+/**
+ * Scroll to anchor om page
+ */
+function scrollToAnchor(anchor, offset, time){
+
+    $('html, body').animate({
+        scrollTop: $(anchor).offset().top - offset
+    }, time);
+    return false;
+}
+
+$(document).ready(function()
+{
+    var hash = window.location.hash;
+
+    $('.to-anchor').bind('click', function(){
+        var anchor = $(this).attr('target-anchor');
+
+        scrollToAnchor(anchor, -155, 500);
+
+        $(document).find('li.current').removeClass('current');
+        $(this).closest('li').addClass('current');
+    });
+
+    if(hash){
+        $(document).find('a.current').removeClass('current');
+        $('.to-anchor[target-anchor="' + hash + '"]').addClass('current');
+        setTimeout(function() {
+            scrollToAnchor(hash, -155, 500);
+        },50)
+    }
+
+});

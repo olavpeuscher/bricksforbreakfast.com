@@ -14,17 +14,30 @@
         <div class="container">
             <nav>
                 <div class="logo">
-                    bricksforbreakfast
+                    <a href="/">bricksforbreakfast</a>
                 </div>
                 <ul class="inline">
-                    <li class="active">The collective</li>
-                    <li>Music</li>
-                    <li>Contact</li>
+                    <li>
+                        <a class="to-anchor" target-anchor="#about">About</a>
+                    </li>
+                    <li>
+                        <a class="to-anchor" target-anchor="#music">Music</a>
+                    </li>
+                    <li>
+                        <a class="to-anchor" target-anchor="#contact">Contact</a>
+                    </li>
                 </ul>
             </nav>
 
             {{ content }}
+
+            <footer>
+                <div class="footer-logo"></div>
+            </footer>
         </div>
 
     </body>
+
+    <script type="text/javascript" src="/js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="/js/main.js"></script>
 </html>
