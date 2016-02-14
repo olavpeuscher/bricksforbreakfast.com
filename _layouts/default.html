@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html>
-<head>
-    <title>{{ site.name }} - {{ page.title }}</title>
-    <meta name="description" content="Portfolio site of Olav Peuscher"/>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <meta name="author" content="Olav Peuscher" />
+    <head>
+        <title>{{ site.name }} - {{ page.title }}</title>
+        <meta name="description" content="Portfolio site of Olav Peuscher"/>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <meta name="author" content="Olav Peuscher" />
 
-    <link rel="stylesheet" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
+        <link rel="stylesheet" type="text/css" href="/css/app.css" />
+    </head>
 
-    <link rel="stylesheet" type="text/css" href="/css/app.css" />
-</head>
+    <body>
+        <div class="container">
+            <nav>
+                <div class="logo">
+                    bricksforbreakfast
+                </div>
+                <ul class="inline">
+                    <li class="active">The collective</li>
+                    <li>Music</li>
+                    <li>Contact</li>
+                </ul>
+            </nav>
 
-<body>
+            {{ content }}
+        </div>
 
-{{ content }}
-
-</body>
+    </body>
 </html>
