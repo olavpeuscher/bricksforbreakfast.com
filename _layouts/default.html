@@ -2,35 +2,41 @@
 <html>
     <head>
         <title>{{ site.name }} - {{ page.title }}</title>
-        <meta name="description" content="Portfolio site of Olav Peuscher"/>
+        <meta name="description" content="Bricks for breakfast site by Olav Peuscher"/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="author" content="Olav Peuscher" />
+        <meta name="author" content="Olav Peuscher | Label305" />
 
         <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/css/app.css" />
+
+        <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
     </head>
 
     <body>
-        <div class="container">
-            <nav>
-                <div class="logo">
-                    <a href="/">bricksforbreakfast</a>
-                </div>
-                <ul class="inline">
-                    <li>
-                        <a class="to-anchor" target-anchor="#about">About</a>
-                    </li>
-                    <li>
-                        <a class="to-anchor" target-anchor="#music">Music</a>
-                    </li>
-                    <li>
-                        <a class="to-anchor" target-anchor="#contact">Contact</a>
-                    </li>
-                </ul>
-            </nav>
+        <nav>
+            <div class="logo">
+                <a href="/">bricksforbreakfast</a>
+            </div>
+
+            <div id="menu-trigger">
+                <span></span>
+            </div>
+
+            <ul class="inline">
+                <li>
+                    <a class="to-anchor" target-anchor="#about">About</a>
+                </li>
+                <li>
+                    <a class="to-anchor" target-anchor="#music">Music</a>
+                </li>
+                <li>
+                    <a class="to-anchor" target-anchor="#contact">Contact</a>
+                </li>
+            </ul>
+        </nav>
 
             {{ content }}
-
+        <div class="container">
             <footer>
                 <div class="footer-logo"></div>
             </footer>
