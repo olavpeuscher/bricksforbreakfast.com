@@ -405,14 +405,13 @@ body
     &:after,
     span
       width: 100%
-      height: 2px
+      height: 1px
       background-color: white
       display: block
       position: absolute
       left: 0
       top: 0
       transform-origin: center center
-      border-radius: 1px
       transition: all ease-in 150ms
     &:before,
     &:after
@@ -427,7 +426,7 @@ body
       top: 14px
     &.open
       &:before
-        transform: translateY(5px) rotate(45deg)
+        transform: translateY(5px) rotate(-135deg)
         transition: all ease-in 150ms
       &:after
         transform: translateY(-5px) rotate(135deg)
