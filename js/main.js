@@ -11,6 +11,12 @@ $(window).scroll(function () {
         $('header').addClass('scroll');
         $('section.ep').addClass('fade-in').removeClass('fade-out');
     }
+
+    if ($(this).scrollTop() < 100) {
+        $('nav').removeClass('bg');
+    }else {
+        $('nav').addClass('bg');
+    }
 });
 
 /**
