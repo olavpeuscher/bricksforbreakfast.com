@@ -11,6 +11,8 @@ body
   width: 100%
   color: $black-color
   font-family: $main-type-font
+  .relative
+    position: relative
   .container
     width: 100%
     max-width: 1600px
@@ -24,8 +26,9 @@ body
     text-transform: uppercase
     margin: 0 auto 30px auto
     display: inline-block
-    float: none
     position: relative
+    float: left
+    width: 100%
   p
     font-family: $tertiary-type-font
     font-size: 16px
@@ -65,7 +68,7 @@ body
       border-radius: 50%
       background-image: url('../images/bricks_white.svg')
       background-position: center
-      background-size: 200px
+      background-size: 225px
       background-repeat: no-repeat
     h1
       color: white
@@ -125,10 +128,11 @@ body
     color: white
     z-index: 999
     transition: background ease-out 150ms, box-shadow ease-out 150ms
-    &.scroll
+    &.bg
       background-color: rgba(250,250,250,0.90)
-      transition: background ease-in 150ms, box-shadow ease-in 150ms
       box-shadow: 0 0 5px rgba(0,0,0,0.05)
+    &.scroll
+      transition: background ease-in 150ms, box-shadow ease-in 150ms
       color: $black-color
       ul
         li
@@ -208,7 +212,7 @@ body
         top: 2.5px
         background-image: url('../images/logo_white.svg')
         background-position: center
-        background-size: 30px
+        background-size: 32px
         background-repeat: no-repeat
         height: 40px
         width: 40px
@@ -219,8 +223,6 @@ body
     display: inline-block
     float: left
     width: 100%
-    h2
-      width: 100%
     &.fade-out
       opacity: 0
       filter: alpha(opacity=0)
@@ -230,75 +232,49 @@ body
       filter: alpha(opacity=100)
       transition: opacity ease-in 250ms
       transition-delay: 200ms
-    &#just-an-ep
-      background-color: #E2DDDA
-      .cover
-        background-image: url('../images/covers/just-an-ep.jpg')
     &.music
       background-color: $light-gray-color
+      .content
+        margin-bottom: 30px
     &.ep,
     &.music
       position: relative
       width: 100%
       display: inline-block
       float: left
-      min-height: 600px
-      padding: 50% 0 0 0
-      .inner
-        position: absolute
-        left: 0
-        top: 0
-        height: 100%
+      padding: 45px
+      .content
+        display: inline-block
+        position: relative
         width: 100%
-        padding: 45px
-        .content
-          display: inline-block
+        height: auto
+        h2
+          border-bottom: 1px solid $black-color
+          margin: 0 0 15px 0
+          padding: 0 0 15px 0
+          font-size: 40px
+          line-height: 40px
+      .cover
+        display: inline-block
+        position: relative
+        width: 100%
+        margin: 0
+        height: auto
+        img
           position: absolute
-          width: 33.33%
-          height: auto
-          padding-top: 45px
-          border-top: 1px solid $black-color
-          bottom: 45px
-          padding-bottom: 85px
-          &.left
-            left: 45px
-          &.right
-            right: 45px
-          h2
-            margin: 0 0 15px 0
-            font-size: 40px
-            line-height: 40px
-          .btn
-            position: absolute
-            right: 0
-            bottom: 0
-        .cover,
-        .soundcloud-wrapper
-          display: inline-block
-          position: absolute
-        .cover
-          left: calc(33.33% - 247.5px)
-          bottom: calc(50% - 225px)
-          height: 450px
-          width: 450px
-          transform: perspective(1000px) rotateY(10deg)
+          transform: perspective(1000px) rotateY(10deg) rotateZ(0)
           box-shadow: -15px 0 45px rgba(0,0,0,0.05)
-          background-position: center
-          background-size: 100%
-          background-repeat: no-repeat
-        .soundcloud-wrapper
-          width: calc(66.66% - 135px)
-          height: auto
-          top: 50%
-          transform: translateY(-50%)
-          right: 45px
-          .soundcloud-item
-            display: inline-block
-            float: left
-            width: 100%
-            margin-bottom: 15px
-            &:last-child
-              margin: 0
+          z-index: 1
+      .soundcloud-wrapper
+        .soundcloud-item
+          display: inline-block
+          float: left
+          width: 100%
+          margin-bottom: 15px
+          &:last-child
+            margin: 0
+  #just-an-ep
+    background-color: #E2DDDA
   ul
     &.inline
       display: inline-block
@@ -358,6 +334,10 @@ body
         opacity: 1
         filter: alpha(opacity=100)
         transition: ease-in-out all 150ms
+  .button-wrapper
+    display: inline-block
+    float: left
+    width: 100%
   .divider
     width: 100%
     height: 80px
@@ -404,7 +384,7 @@ body
       height: 40px
       background-image: url('../images/logo_white.svg')
       background-position: center
-      background-size: 40px
+      background-size: 32px
       background-repeat: no-repeat
       border-radius: 50%
       border: 1px solid white
@@ -413,7 +393,7 @@ body
     height: 20px
     position: absolute
     top: 37.5px
-    left: 30px
+    left: 15px
     display: block
     visibility: hidden
     cursor: pointer
@@ -458,113 +438,145 @@ body
       opacity: 0.75
       filter: alpha(opacity=75)
       transition: opacity ease-in 150ms
-
-@media(max-width: 1600px)
-  .cover
-    left: calc(33% - 247.5px) !important
-@media(max-width: 1024px)
-  .cover
-    width: 300px !important
-    height: 300px !important
-    left: calc(33% - 172.5px) !important
-    top: calc(50% - 150px) !important
+@media(min-width: 1200px)
+  body
+    section
+      &.ep
+        .cover
+          min-height: 600px
+          img
+            width: 450px
+            height: 450px
+            left: calc(50% - 225px)
+            top: calc(50% - 225px)
+@media(max-width: 1200px)
+  body
+    section
+      &.ep
+        .cover
+          padding: 100% 0 0 0
+          img
+            top: 12.5%
+            left: 12.5%
+            width: 75%
+@media(max-width: 991px)
+  body
+    section
+      .content
+        h2
+          text-align: center
 @media(max-width: 768px)
-  .container,
-  nav
-    padding: 0 45px !important
-    .logo
-      float: right !important
-    #menu-trigger
-      visibility: visible
-    &.menu-open
+  body
+    .container,
+    nav
+      padding: 0 45px
+      .logo
+        float: right
       #menu-trigger
-        span,
-        &:before,
-        &:after
-          background-color: $black-color !important
-      ul
         visibility: visible
-        opacity: 1
-        filter: alpha(opacity=100)
-        transition: opacity ease-in 150ms
-  ul
-    width: 100%
-    position: absolute
-    margin: 0 !important
-    padding: 105px
-    left: 0
-    top: 0
-    height: 100vh
-    visibility: hidden
-    opacity: 0
-    filter: alpha(opacity=0)
-    transition: opacity ease-in 150ms, visibility 150ms
-    background-color: rgba(247,170,78,0.95)
-    li
-      width: 100%
-      text-align: center
-      a
-        float: none !important
-        margin: 0 auto
-        font-size: 18px !important
-        color: $black-color !important
-        &:before
-          color: $black-color !important
-        &:hover
-          color: white !important
-  header
-    .logo
-      width: 200px !important
-      height: 200px !important
-      left: calc(50% - 100px) !important
-      top: calc(50% - 100px) !important
-      background-size: 133px !important
-      border-width: 3px !important
-    h1
-      font-size: 30px !important
-      line-height: 30px !important
-      bottom: calc(50% - 200px) !important
-      span
-        height: 30px !important
-        &:before
-          height: 20px !important
-  .cover
-    width: 200px !important
-    height: 200px !important
-    left: calc(33% - 122.5px) !important
-    top: calc(50% - 100px) !important
+      &.menu-open
+        #menu-trigger
+          span,
+          &:before,
+          &:after
+            background-color: $black-color !important
+        ul
+          visibility: visible
+          opacity: 1
+          filter: alpha(opacity=100)
+          transition: opacity ease-in 150ms
+      ul
+        width: 100%
+        position: absolute
+        margin: 0 !important
+        padding: 105px
+        left: 0
+        top: 0
+        height: 100vh
+        visibility: hidden
+        opacity: 0
+        filter: alpha(opacity=0)
+        transition: opacity ease-in 150ms, visibility 150ms
+        background-color: rgba(247,170,78,0.95)
+        li
+          width: 100%
+          text-align: center
+          margin-bottom: 15px
+          a
+            float: none
+            margin: 0 auto
+            font-size: 18px
+            color: $black-color
+            &:before
+              color: $black-color
+            &:hover
+              color: white
+          &.current
+            a
+              color: white
+    header
+      .logo
+        width: 200px
+        height: 200px
+        left: calc(50% - 100px)
+        top: calc(50% - 100px)
+        background-size: 150px
+        border-width: 2px
+      h1
+        font-size: 30px
+        line-height: 30px
+        bottom: calc(50% - 200px)
+        span
+          height: 30px
+          &:before
+            height: 20px
 @media(max-width: 640px)
-  nav
-    padding: 0 30px !important
-    .logo
-      height: 35px !important
-      padding-left: 40px !important
+  body
+    .container,
+    nav
+      padding: 0 15px
+    nav
+      height: 75px
+      .logo
+        margin: 15px 0
+      #menu-trigger
+        top: 27.5px
+    p
+      text-align: center
+      padding: 0 30px
+    .content
+      p
+        padding: 0 !important
+    .cover
+      img
+        transform: none !important
+    section
+      &.ep,
+      &.music
+        padding: 30px
+    .button-wrapper
+      text-align: center
+      .btn
+        float: none !important
+        margin: 15px auto
+    .divider
+      margin: 30px
+      width: calc(100% - 60px)
       &:before
-        height: 30px !important
-        width: 30px !important
-        background-size: 22.5px !important
-      a
-        line-height: 35px !important
-        font-size: 16px !important
-  header
-    .logo
-      width: 150px !important
-      height: 150px !important
-      left: calc(50% - 75px) !important
-      top: calc(50% - 75px) !important
-      background-size: 112px !important
-      border-width: 3px !important
-    h1
-      max-width: 300px !important
-      left: calc(50% - 150px) !important
-  .container
-    padding: 0 30px !important
-  .divider
-    width: 100% !important
-    margin: 45px 0 !important
-    &:before
-      width: 100% !important
-      left: 0 !important
+        width: 100%
+        left: 0 !important
+    header
+      .logo
+        width: 150px
+        height: 150px
+        left: calc(50% - 75px)
+        top: calc(50% - 100px)
+        background-size: 112px
+        border-width: 2px
+      h1
+        max-width: 300px
+        left: calc(50% - 150px)
+        bottom: calc(50% - 150px)
 
 @import ../_sass/fonts
 @import ../_sass/ionicons
