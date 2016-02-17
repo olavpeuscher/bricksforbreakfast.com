@@ -56,6 +56,8 @@ body
       opacity: 1
       filter: alpha(opacity=100)
       transition: opacity ease-out 250ms
+      -webkit-transition: opacity ease-out 250ms
+      -moz-transition: opacity ease-out 250ms
       z-index: -1
     .logo
       position: absolute
@@ -100,12 +102,13 @@ body
           height: 30px
           width: 100%
           z-index: -1
-          transition: background ease-out 50ms
     &.scroll
       &:before
         opacity: 0
         filter: alpha(opacity=0)
-        transition: opacity ease-out 250ms
+        transition: opacity ease-in 150ms
+        -webkit-transition: opacity ease-in 150ms
+        -moz-transition: opacity ease-in 150ms
       .logo
         border-color: $black-color
         background-image: url('../images/bricks.svg')
@@ -115,7 +118,6 @@ body
           color: white
           &:before
             background-color: $black-color
-            transition: background ease-in 50ms
   nav
     position: fixed
     padding: 0 105px
@@ -128,11 +130,15 @@ body
     color: white
     z-index: 999
     transition: background ease-out 150ms, box-shadow ease-out 150ms
+    -webkit-transition: background ease-out 150ms, box-shadow ease-out 150ms
+    -moz-transition: background ease-out 150ms, box-shadow ease-out 150ms
     &.bg
       background-color: rgba(250,250,250,0.90)
       box-shadow: 0 0 5px rgba(0,0,0,0.05)
     &.scroll
       transition: background ease-in 150ms, box-shadow ease-in 150ms
+      -webkit-transition: background ease-in 150ms, box-shadow ease-in 150ms
+      -moz-transition: background ease-in 150ms, box-shadow ease-in 150ms
       color: $black-color
       ul
         li
@@ -164,12 +170,16 @@ body
           text-transform: uppercase
           color: white
           transition: color ease-out 150ms
+          -webkit-transition: color ease-out 150ms
+          -moz-transition: color ease-out 150ms
           cursor: pointer
           position: relative
           &:hover
             text-decoration: none
             color: $orange-color
             transition: color ease-in 150ms
+            -webkit-transition: color ease-in 150ms
+            -moz-transition: color ease-in 150ms
           &:before
             content: '//'
             position: absolute
@@ -200,11 +210,15 @@ body
         font-size: 20px
         color: white
         transition: opacity ease-out 150ms
+        -webkit-transition: opacity ease-out 150ms
+        -moz-transition: opacity ease-out 150ms
         &:hover
           text-decoration: none
           opacity: 0.75
           filter: alpha(opacity=75)
           transition: opacity ease-in 150ms
+          -webkit-transition: opacity ease-in 150ms
+          -moz-transition: opacity ease-in 150ms
       &:before
         content: ''
         position: absolute
@@ -227,11 +241,17 @@ body
       opacity: 0
       filter: alpha(opacity=0)
       transition: opacity ease-out 250ms
+      -webkit-transition: opacity ease-out 250ms
+      -moz-transition: opacity ease-out 250ms
     &.fade-in
       opacity: 1
       filter: alpha(opacity=100)
       transition: opacity ease-in 250ms
+      -webkit-transition: opacity ease-in 250ms
+      -moz-transition: opacity ease-in 250ms
       transition-delay: 200ms
+      -webkit-transition-delay: 200ms
+      -moz-transition-delay: 200ms
     &.music
       background-color: $light-gray-color
       .content
@@ -263,6 +283,8 @@ body
         img
           position: absolute
           transform: perspective(1000px) rotateY(10deg) rotateZ(0)
+          -webkit-transform: perspective(1000px) rotateY(10deg) rotateZ(0)
+          -moz-transform: perspective(1000px) rotateY(10deg) rotateZ(0)
           box-shadow: -15px 0 45px rgba(0,0,0,0.05)
           z-index: 1
       .soundcloud-wrapper
@@ -301,6 +323,8 @@ body
     overflow: hidden
     cursor: pointer
     transition: ease-out color 150ms
+    -webkit-transition: ease-out color 150ms
+    -moz-transition: ease-out color 150ms
     z-index: 1
     &:after,
     &:before
@@ -312,6 +336,8 @@ body
       opacity: 0
       filter: alpha(opacity=0)
       transition: ease-out all 150ms
+      -webkit-transition: ease-out all 150ms
+      -moz-transition: ease-out all 150ms
       z-index: -1
     &:after
       border-top: 38px solid $dark-gray-color
@@ -319,21 +345,31 @@ body
       border-left: 0px solid transparent
       border-bottom: 0px solid transparent
       transform: translateY(-40px)
+      -webkit-transform: translateY(-40px)
+      -moz-transform: translateY(-40px)
     &:before
       border-bottom: 38px solid $dark-gray-color
       border-left: 190px solid transparent
       border-right: 0px solid transparent
       border-top: 0px solid transparent
       transform: translateY(40px)
+      -webkit-transform: translateY(40px)
+      -moz-transform: translateY(40px)
     &:hover
       color: #ffffff
       transition: ease-in-out color 150ms
+      -webkit-transition: ease-in-out color 150ms
+      -moz-transition: ease-in-out color 150ms
       &:before,
       &:after
         transform: translateY(0px)
+        -webkit-transform: translateY(0px)
+        -moz-transform: translateY(0px)
         opacity: 1
         filter: alpha(opacity=100)
         transition: ease-in-out all 150ms
+        -webkit-transition: ease-in-out all 150ms
+        -moz-transition: ease-in-out all 150ms
   .button-wrapper
     display: inline-block
     float: left
@@ -401,6 +437,8 @@ body
     opacity: 1
     filter: alpha(opacity=100)
     transition: opacity ease-in 150ms
+    -webkit-transition: opacity ease-in 150ms
+    -moz-transition: opacity ease-in 150ms
     &:before,
     &:after,
     span
@@ -412,11 +450,17 @@ body
       left: 0
       top: 0
       transform-origin: center center
+      -webkit-transform-origin: center center
+      -moz-transform-origin: center center
       transition: all ease-in 150ms
+      -webkit-transition: all ease-in 150ms
+      -moz-transition: all ease-in 150ms
     &:before,
     &:after
       content: ''
       transform: rotate(0deg)
+      -webkit-transform: rotate(0deg)
+      -moz-transform: rotate(0deg)
     span
       top: 9px !important
       opacity: 1
@@ -427,16 +471,26 @@ body
     &.open
       &:before
         transform: translateY(5px) rotate(-135deg)
+        -webkit-transform: translateY(5px) rotate(-135deg)
+        -moz-transform: translateY(5px) rotate(-135deg)
         transition: all ease-in 150ms
+        -webkit-transition: all ease-in 150ms
+        -moz-transition: all ease-in 150ms
       &:after
         transform: translateY(-5px) rotate(135deg)
+        -webkit-transform: translateY(-5px) rotate(135deg)
+        -moz-transform: translateY(-5px) rotate(135deg)
         transition: all ease-in 150ms
+        -webkit-transition: all ease-in 150ms
+        -moz-transition: all ease-in 150ms
       span
         opacity: 0
     &:hover
       opacity: 0.75
       filter: alpha(opacity=75)
       transition: opacity ease-in 150ms
+      -webkit-transition: opacity ease-in 150ms
+      -moz-transition: opacity ease-in 150ms
 @media(min-width: 1200px)
   body
     section
@@ -484,6 +538,8 @@ body
           opacity: 1
           filter: alpha(opacity=100)
           transition: opacity ease-in 150ms
+          -webkit-transition: opacity ease-in 150ms
+          -moz-transition: opacity ease-in 150ms
       ul
         width: 100%
         position: absolute
@@ -496,7 +552,10 @@ body
         opacity: 0
         filter: alpha(opacity=0)
         transition: opacity ease-in 150ms, visibility 150ms
+        -webkit-transition: opacity ease-in 150ms, visibility 150ms
+        -moz-transition: opacity ease-in 150ms, visibility 150ms
         background-color: rgba(247,170,78,0.95)
+        box-shadow: inset 0 0 150px rgba(255,255,255,0.25)
         li
           width: 100%
           text-align: center
@@ -531,6 +590,7 @@ body
             height: 20px
 @media(max-width: 640px)
   body
+    min-width: 300px
     .container,
     nav
       padding: 0 15px

@@ -2,10 +2,11 @@
  * Add class to nav when page scrolls
  */
 $(window).scroll(function () {
-    if ($(this).scrollTop() < 10) {
+    if ($(this).scrollTop() == 0) {
         $('nav').removeClass('scroll');
         $('header').removeClass('scroll');
         $('section.ep').removeClass('fade-in').addClass('fade-out');
+        $('li.current').removeClass('current');
     } else {
         $('nav').addClass('scroll');
         $('header').addClass('scroll');
