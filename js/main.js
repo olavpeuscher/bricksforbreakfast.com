@@ -3,17 +3,20 @@
  */
 $(window).scroll(function () {
     if ($(this).scrollTop() == 0) {
-        $('nav').removeClass('scroll');
-        $('header').removeClass('scroll');
-        $('section.ep').removeClass('fade-in').addClass('fade-out');
         $('li.current').removeClass('current');
-    } else {
+    }
+
+    if ($(this).scrollTop() < 150) {
+        $('nav').removeClass('scroll');
+        $('section.ep').removeClass('fade-in').addClass('fade-out');
+        $('header').removeClass('scroll');
+    }else {
         $('nav').addClass('scroll');
         $('header').addClass('scroll');
         $('section.ep').addClass('fade-in').removeClass('fade-out');
     }
 
-    if ($(this).scrollTop() < 100) {
+    if ($(this).scrollTop() < 500) {
         $('nav').removeClass('bg');
     }else {
         $('nav').addClass('bg');
