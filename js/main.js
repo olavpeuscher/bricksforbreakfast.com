@@ -6,7 +6,7 @@ $(window).scroll(function () {
         $('li.current').removeClass('current');
     }
 
-    if ($(this).scrollTop() < 150) {
+    if ($(this).scrollTop() < 100) {
         $('nav').removeClass('scroll');
         $('section.ep').removeClass('fade-in').addClass('fade-out');
         $('header').removeClass('scroll');
@@ -16,7 +16,7 @@ $(window).scroll(function () {
         $('section.ep').addClass('fade-in').removeClass('fade-out');
     }
 
-    if ($(this).scrollTop() < 500) {
+    if ($(this).scrollTop() < 100) {
         $('nav').removeClass('bg');
     }else {
         $('nav').addClass('bg');
