@@ -8,12 +8,10 @@ $(window).scroll(function () {
 
     if ($(this).scrollTop() < 100) {
         $('nav').removeClass('scroll');
-        $('section.ep').removeClass('fade-in').addClass('fade-out');
         $('header').removeClass('scroll');
     }else {
         $('nav').addClass('scroll');
         $('header').addClass('scroll');
-        $('section.ep').addClass('fade-in').removeClass('fade-out');
     }
 
     if ($(this).scrollTop() < 100) {
@@ -41,6 +39,7 @@ $(document).ready(function()
      **/
     $('#menu-trigger').bind('click', function(){
         $('nav').toggleClass('menu-open');
+        $('body').toggleClass('menu-open');
         $(this).toggleClass('open');
     });
 
