@@ -6,27 +6,31 @@ $(window).scroll(function () {
         $('li.current').removeClass('current');
     }
 
-    if ($(this).scrollTop() < 150) {
+    if ($(this).scrollTop() < 100) {
         $('nav').removeClass('scroll');
-        $('section.ep').removeClass('fade-in').addClass('fade-out');
         $('header').removeClass('scroll');
-    }else {
+    } else {
         $('nav').addClass('scroll');
         $('header').addClass('scroll');
-        $('section.ep').addClass('fade-in').removeClass('fade-out');
     }
 
-    if ($(this).scrollTop() < 500) {
+    if ($(this).scrollTop() < 100) {
         $('nav').removeClass('bg');
-    }else {
+    } else {
         $('nav').addClass('bg');
+    }
+
+    if ($(this).scrollTop() > 200) {
+        $('#eps').removeClass('fade-out').addClass('fade-in');
+    } else {
+        $('#eps').addClass('fade-out').removeClass('fade-in');
     }
 });
 
 /**
  * Scroll to anchor om page
  */
-function scrollToAnchor(anchor, offset, time){
+function scrollToAnchor(anchor, offset, time) {
 
     $('html, body').animate({
         scrollTop: $(anchor).offset().top - offset
@@ -34,24 +38,25 @@ function scrollToAnchor(anchor, offset, time){
     return false;
 }
 
-$(document).ready(function()
-{
+$(document).ready(function () {
     /**
      * Minimized menu trigger on mobile
      **/
-    $('#menu-trigger').bind('click', function(){
+    $('#menu-trigger').bind('click', function () {
         $('nav').toggleClass('menu-open');
+        $('body').toggleClass('menu-open');
         $(this).toggleClass('open');
     });
 
-    $('nav a').bind('click', function(){
+    $('nav a').bind('click', function () {
         $('nav').removeClass('menu-open');
+        $('body').removeClass('menu-open');
         $('#menu-trigger').removeClass('open');
     });
 
     var hash = window.location.hash;
 
-    $('.to-anchor').bind('click', function(){
+    $('.to-anchor').bind('click', function () {
         var anchor = $(this).attr('target-anchor');
 
         scrollToAnchor(anchor, 180, 500);
@@ -60,12 +65,12 @@ $(document).ready(function()
         $(this).closest('li').addClass('current');
     });
 
-    if(hash){
+    if (hash) {
         $(document).find('a.current').removeClass('current');
         $('.to-anchor[target-anchor="' + hash + '"]').addClass('current');
-        setTimeout(function() {
+        setTimeout(function () {
             scrollToAnchor(hash, 180, 500);
-        },50)
+        }, 50)
     }
 
 });
