@@ -168,6 +168,8 @@ body
         top: -30px
         bottom: 0
         box-shadow: 0 0 4px rgba(80,80,80,0.2)
+        -moz-box-shadow: 0 0 4px rgba(80,80,80,0.2)
+        -webkit-box-shadow: 0 0 4px rgba(80,80,80,0.2)
       ul
         li
           a, span
@@ -384,6 +386,8 @@ body
     .release-image
       img
         box-shadow: 1px 1px 6px rgba(80,80,80,0.2)
+        -moz-box-shadow: 1px 1px 6px rgba(80,80,80,0.2)
+        -webkit-box-shadow: 1px 1px 6px rgba(80,80,80,0.2)
 
   // SOUNDCLOUD
   .soundcloud-wrapper
@@ -647,7 +651,8 @@ body
             float: none
             margin: 0 auto
             font-size: 18px
-            padding-left: 25px
+            padding-left: 25px !important
+            padding-right: 25px !important
             color: $black-color
             &:before
               color: $black-color
