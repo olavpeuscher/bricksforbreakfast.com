@@ -1,4 +1,4 @@
-name: Bricksforbreakfast.com
+name: bricksforbreakfast.com
 markdown: redcarpet
 exclude: [Vagrantfile, README.md, LICENSE]
 sass:

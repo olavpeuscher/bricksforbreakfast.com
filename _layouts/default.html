@@ -4,7 +4,7 @@
         <title>{{ site.name }} - {{ page.title }}</title>
         <meta name="description" content="bricksforbreakfast"/>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-        <meta name="author" content="Olav Peuscher | Label305" />
+        <meta name="author" content="Olav Peuscher" />
 
         <link rel="stylesheet" type="text/css" href="/css/bootstrap.min.css">
         <link rel="stylesheet" type="text/css" href="/css/app.css" />
@@ -41,6 +41,12 @@
                 <span></span>
             </div>
 
+            <ul class="inline social">
+                <li>
+                    <a target="_blank" href="https://www.facebook.com/bricksforbreakfast/" class="ion-social-facebook"></a>
+                </li>
+            </ul>
+
             <ul class="inline">
                 <li>
                     <a class="to-anchor" target-anchor="#eps">Releases</a>
@@ -48,15 +54,20 @@
                 <li>
                     <a class="to-anchor" target-anchor="#about">Who we are</a>
                 </li>
+                <li>
+                    <a class="to-anchor" target-anchor="#contact">Contact</a>
+                </li>
             </ul>
         </nav>
 
             {{ content }}
+
         <footer>
             <div class="footer-logo"></div>
+
         </footer>
     </body>
 
-    <script type="text/javascript" src="/js/jquery-2.2.0.min.js"></script>
+    <script type="text/javascript" src="/js/vendor/jquery.min.js"></script>
     <script type="text/javascript" src="/js/main.js"></script>
 </html>

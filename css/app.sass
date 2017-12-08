@@ -13,8 +13,6 @@ body
   padding: 30px
   color: $black-color
   font-family: $main-type-font
-  &.menu-open
-    overflow: hidden
   .body-border
     position: fixed
     left: 0
@@ -59,6 +57,20 @@ body
     &:last-child,
     &:last-of-type
       margin-bottom: 0
+    a
+      color: $orange-color
+      transition: all ease-out 150ms
+      -webkit-transition: all ease-out 150ms
+      -moz-transition: all ease-out 150ms
+      &:hover,
+      &:hover:active,
+      &:hover:focus
+        background-color: $black-color
+        color: white
+        transition: all ease-out 150ms
+        -webkit-transition: all ease-out 150ms
+        -moz-transition: all ease-out 150ms
+        text-decoration: none
 
   // HEADER
   header
@@ -159,7 +171,6 @@ body
       -webkit-transition: all ease-in 100ms
       -moz-transition: all ease-in 100ms
     &.scroll
-      color: $black-color
       &:before
         content: ''
         position: absolute
@@ -174,14 +185,10 @@ body
         li
           a, span
             color: $black-color
-      #menu-trigger
-        &:before,
-        &:after,
-        span
-          background-color: $black-color !important
     ul
       margin: 30px 0
       float: right !important
+      padding: 0
       li
         height: 45px
         position: relative
@@ -225,6 +232,36 @@ body
         &:last-child
           a, span
             padding-right: 0
+      &.social
+        margin-left: 15px
+        padding-left: 15px
+        position: relative
+        &:before
+          content: ''
+          height: 100%
+          width: 1px
+          background-color: $orange-color
+          position: absolute
+          left: 0
+          top: 0
+          transform: rotate(21deg)
+          -webkit-transform: rotate(21deg)
+          -moz-transform: rotate(21deg)
+        li
+          a
+            height: 45px
+            &:before
+              color: $black-color
+              font-size: 20px
+              line-height: 25px
+            &:hover
+              &:before
+                color: $orange-color
+                transition: color ease-in 150ms
+                -webkit-transition: color ease-in 150ms
+                -moz-transition: color ease-in 150ms
+
+
     .logo
       position: relative
       float: left
@@ -313,17 +350,23 @@ body
       transition-delay: 200ms
       -webkit-transition-delay: 200ms
       -moz-transition-delay: 200ms
-    &#about
-      background-color: $light-gray-color //#f3f2ed //#f1efeb
+    &#about,
+    &#contact
+      background-color: $light-gray-color
       position: relative
       &:before
         content: ''
         position: absolute
-        right: 0
         top: 0
         height: 100%
         width: 50%
         background-color: rgba(0,0,0,0.05)
+    &#about
+      &:before
+        right: 0
+    &#contact
+      &:before
+        left: 0
     .section-title
       display: inline-block
       float: left
@@ -514,7 +557,7 @@ body
       &:before
         content: ''
         position: absolute
-        right: 0
+        left: 0
         top: 0
         height: 100%
         width: 50%
@@ -522,7 +565,7 @@ body
     &:before
       content: ''
       position: absolute
-      left: 0
+      right: 0
       top: 0
       height: 100%
       width: 50%
@@ -534,7 +577,7 @@ body
     height: 20px
     position: absolute
     top: 42.5px
-    right: 30px
+    right: 80px
     display: block
     visibility: hidden
     cursor: pointer
@@ -591,8 +634,8 @@ body
       span
         opacity: 0
     &:hover
-      opacity: 0.75
-      filter: alpha(opacity=75)
+      opacity: 0.65
+      filter: alpha(opacity=65)
       transition: opacity ease-in 150ms
       -webkit-transition: opacity ease-in 150ms
       -moz-transition: opacity ease-in 150ms
@@ -628,11 +671,20 @@ body
         transition: all ease-in 150ms
         -webkit-transition: all ease-in 150ms
         -moz-transition: all ease-in 150ms
-      ul
+        ul.social
+          z-index: 1001
+          li
+            a:hover
+              &:before
+                color: white
+          &:before
+            background-color: white
+
+      ul:not(.social)
         width: 100%
         position: absolute
         margin: 0 !important
-        padding: 105px
+        padding: 105px 0
         left: 0
         top: 0
         height: auto
@@ -673,6 +725,16 @@ body
           transition: all ease-in 150ms
           -webkit-transition: all ease-in 150ms
           -moz-transition: all ease-in 150ms
+        #menu-trigger
+          &:hover
+            opacity: 1
+            &:before,
+            &:after,
+            span
+              background-color: white
+              transition: all 150ms
+              -webkit-transition: all 150ms
+              -moz-transition: all 150ms
 
 @media(min-width: 992px) and (max-width: 1199px)
   body
@@ -705,7 +767,7 @@ body
 @media(max-width: 991px)
   body
     section
-      &#about
+      &#about, &#contact
         padding-left: 30px
         padding-right: 30px
 
@@ -720,7 +782,7 @@ body
           &:before
             height: 32px
     section
-      &#about
+      &#about, &#contact
         margin-bottom: 30px
         &:before
           display: none
@@ -743,7 +805,7 @@ body
       line-height: 20px
     section
       padding: 30px 0
-      &#about
+      &#about, &#contact
         padding-left: 15px
         padding-right: 15px
         margin-bottom: 15px
@@ -777,9 +839,12 @@ body
         a
           font-size: 18px
       #menu-trigger
-        right: 15px
+        right: 65px
         top: 27.5px
-      ul
+      ul.social
+        margin-top: 15px
+        margin-bottom: 15px
+      ul:not(.social)
         padding: 90px 30px
         li
           a
