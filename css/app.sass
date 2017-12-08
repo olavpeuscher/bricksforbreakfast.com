@@ -166,11 +166,14 @@ body
     -webkit-transition: all ease-in 100ms
     -moz-transition: all ease-in 100ms
     &.bg
-      background-color: rgba(255,255,255,0.9) //#E2DED1
+      background-color: rgba(255,255,255,0.85)
       transition: all ease-in 100ms
       -webkit-transition: all ease-in 100ms
       -moz-transition: all ease-in 100ms
     &.scroll
+      backdrop-filter: blur(15px)
+      -webkit-backdrop-filter: blur(15px)
+      -moz-backdrop-filter: blur(15px)
       &:before
         content: ''
         position: absolute
@@ -178,9 +181,9 @@ body
         right: -30px
         top: -30px
         bottom: 0
-        box-shadow: 0 0 4px rgba(80,80,80,0.2)
-        -moz-box-shadow: 0 0 4px rgba(80,80,80,0.2)
-        -webkit-box-shadow: 0 0 4px rgba(80,80,80,0.2)
+        box-shadow: 0 0 6px rgba(80,80,80,0.2)
+        -moz-box-shadow: 0 0 6px rgba(80,80,80,0.2)
+        -webkit-box-shadow: 0 0 6px rgba(80,80,80,0.2)
       ul
         li
           a, span
@@ -260,7 +263,6 @@ body
                 transition: color ease-in 150ms
                 -webkit-transition: color ease-in 150ms
                 -moz-transition: color ease-in 150ms
-
 
     .logo
       position: relative
@@ -426,11 +428,6 @@ body
         display: inline-block
         float: none
         max-width: 100%
-    .release-image
-      img
-        box-shadow: 1px 1px 6px rgba(80,80,80,0.2)
-        -moz-box-shadow: 1px 1px 6px rgba(80,80,80,0.2)
-        -webkit-box-shadow: 1px 1px 6px rgba(80,80,80,0.2)
 
   // SOUNDCLOUD
   .soundcloud-wrapper
